@@ -1,0 +1,3 @@
+delivery_status,order_count,average_review_score,low_review_rate
+late,6385,2.27,62.38
+not late,89445,4.29,9.27
