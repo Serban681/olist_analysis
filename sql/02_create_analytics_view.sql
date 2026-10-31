@@ -19,7 +19,7 @@ CREATE OR REPLACE VIEW analytics.get_orders_review AS (
         review_answer_timestamp
     FROM latest_review_prep
     WHERE review_number = 1
-)
+);
 
 CREATE OR REPLACE VIEW analytics.get_orders_delay AS (
     SELECT
@@ -32,4 +32,4 @@ CREATE OR REPLACE VIEW analytics.get_orders_delay AS (
     FROM 
         raw.orders
     GROUP BY order_id
-)
+);

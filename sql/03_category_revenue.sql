@@ -36,4 +36,4 @@ revenue_by_category_en AS (
     ON pcnt.product_category_name = rbc.product_category_name
 )
 SELECT * FROM revenue_by_category_en
-ORDER BY total_revenue DESC;
+ORDER BY average_revenue DESC;
