@@ -56,7 +56,10 @@ get_first_user_order_review_score_and_followup AS (
             FROM
                 raw.orders later_o
             JOIN raw.customers later_c ON later_c.customer_id = later_o.customer_id
-            WHERE later_c.customer_unique_id = first_o.customer_unique_id AND later_o.order_purchase_timestamp > first_o.review_answer_timestamp
+            WHERE 
+                later_c.customer_unique_id = first_o.customer_unique_id AND 
+                later_o.order_purchase_timestamp > first_o.review_answer_timestamp AND
+                later_o.order_purchase_timestamp - first_o.review_answer_timestamp <= INTERVAL '90 days'
         ) AS led_to_subsequent_purchase
     FROM
         get_user_order_review_score_and_followup first_o

@@ -3,7 +3,7 @@ SELECT
     MIN(freight_value) AS lowest_freight_value,
     MAX(freight_value) AS highest_freight_value
 FROM
-    raw.order_items
+    raw.order_items;
 
 -- freight value review association
 WITH get_order_freight_value AS (
@@ -37,4 +37,4 @@ create_freight_value_review_score_association AS (
     GROUP BY ors.review_score
     ORDER BY review_score
 )
-SELECT * FROM create_freight_value_review_score_association
+SELECT * FROM create_freight_value_review_score_association;
